@@ -3,22 +3,22 @@ package com.chernyllexs.score.util.mapper;
 import com.chernyllexs.score.entity.ScoreEntity;
 import com.chernyllexs.score.model.ScoreDto;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Component
 public class ScoreMapper {
-    private final ModelMapper modelMapper;
-
-    public ScoreMapper() {
-        this.modelMapper = new ModelMapper();
-    }
+    @Autowired
+    private  ModelMapper modelMapper;
 
     public ScoreEntity convertToEntity(ScoreDto commentDto){
-        return modelMapper.map(commentDto, ScoreEntity.class);
+        return Objects.isNull(commentDto) ? null : modelMapper.map(commentDto, ScoreEntity.class);
     }
 
     public ScoreDto convertToDto(ScoreEntity commentEntity){
-        return modelMapper.map(commentEntity, ScoreDto.class);
+        return Objects.isNull(commentEntity) ? null : modelMapper.map(commentEntity, ScoreDto.class);
     }
 }
