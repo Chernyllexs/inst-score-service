@@ -10,6 +10,7 @@ spring:
     name: inst-score-service
   datasource:
     url: jdbc:postgresql://postgres-score:5432/score
+    #url: jdbc:postgresql://localhost:5432/score
     username: postgres
     password: 1234
   jpa:

@@ -1,13 +1,18 @@
 package com.chernyllexs.score.service;
 
 import com.chernyllexs.score.model.ScoreDto;
+import com.chernyllexs.score.model.ScoreResponseDto;
 
 import java.util.List;
 
 public interface ScoreService {
-    ScoreDto addScore(ScoreDto scoreDto);
+    void addScore(ScoreDto scoreDto);
 
-    List<ScoreDto> getScoreByPostId(Long postId);
+    ScoreResponseDto getNumberOfScoresByPostId(Long postId);
 
-    List<ScoreDto> getScoreByUserId(Long postId);
+    void deleteUserScoreForPost(Long postId, Long userId);
+
+    void deleteAllUserScores(Long userId);
+
+    void deleteAllScoresForPost(Long postId);
 }
