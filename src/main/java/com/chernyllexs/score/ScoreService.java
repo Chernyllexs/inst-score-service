@@ -15,15 +15,4 @@ public class ScoreService {
     public static void main(String[] args) {
         SpringApplication.run(ScoreService.class, args);
     }
-
-    @Bean
-    public ModelMapper modelMapper() {
-        ModelMapper mapper = new ModelMapper();
-        mapper.getConfiguration()
-                .setMatchingStrategy(MatchingStrategies.STRICT)
-                .setFieldMatchingEnabled(true)
-                .setSkipNullEnabled(true)
-                .setFieldAccessLevel(PRIVATE);
-        return mapper;
-    }
 }

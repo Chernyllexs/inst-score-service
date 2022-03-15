@@ -1,33 +1,17 @@
-package com.chernyllexs.score.entity;
+package com.chernyllexs.score.model.dto;
 
-import javax.persistence.*;
-@Entity
-@Table(name = "scores")
-public class ScoreEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "score_id")
-    private Long scoreId;
+public class ScoreDto {
     private Long postId;
     private Long userId;
     private Boolean scoreState;
 
-    public ScoreEntity() {
+    public ScoreDto() {
     }
 
-    public ScoreEntity(Long scoreId, Long postId, Long userId, Boolean scoreState) {
-        this.scoreId = scoreId;
+    public ScoreDto(Long postId, Long userId, Boolean scoreState) {
         this.postId = postId;
         this.userId = userId;
         this.scoreState = scoreState;
-    }
-
-    public Long getScoreId() {
-        return scoreId;
-    }
-
-    public void setScoreId(Long scoreId) {
-        this.scoreId = scoreId;
     }
 
     public Long getPostId() {
@@ -52,5 +36,14 @@ public class ScoreEntity {
 
     public void setScoreState(Boolean scoreState) {
         this.scoreState = scoreState;
+    }
+
+    @Override
+    public String toString() {
+        return "ScoreDto{" +
+                "postId=" + postId +
+                ", userId=" + userId +
+                ", scoreState=" + scoreState +
+                '}';
     }
 }

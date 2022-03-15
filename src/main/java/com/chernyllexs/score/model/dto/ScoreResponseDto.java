@@ -1,4 +1,4 @@
-package com.chernyllexs.score.model;
+package com.chernyllexs.score.model.dto;
 
 public class ScoreResponseDto {
     private Long numberOfLikes;

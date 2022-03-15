@@ -1,6 +1,6 @@
-package com.chernyllexs.score.service.implementation;
+package com.chernyllexs.score.impl;
 
-import com.chernyllexs.score.service.PostService;
+import com.chernyllexs.score.api.PostService;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Boolean postIsExists(Long postId) {
-        String url = "http://GATEWAY-SERVICE:9000/post/check-post/{postId}";
+        String url = "http://GATEWAY-SERVICE:9000/api/post/check-post/{postId}";
+        /*String url = "http://INST-POST-SERVICE:9001/api/post/check-post/{postId}";*/
+        /*String url = "lb://INST-POST-SERVICE:9001/api/post/check-post/{postId}";*/
         ResponseEntity<Boolean> response = this.restTemplate.getForEntity(url, Boolean.class, postId);
         if(response.getStatusCode() == HttpStatus.OK) {
             return response.getBody();

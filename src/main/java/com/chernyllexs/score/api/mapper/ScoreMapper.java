@@ -1,11 +1,10 @@
-package com.chernyllexs.score.util.mapper;
+package com.chernyllexs.score.api.mapper;
 
-import com.chernyllexs.score.entity.ScoreEntity;
-import com.chernyllexs.score.model.ScoreDto;
+import com.chernyllexs.score.model.entity.ScoreEntity;
+import com.chernyllexs.score.model.dto.ScoreDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 

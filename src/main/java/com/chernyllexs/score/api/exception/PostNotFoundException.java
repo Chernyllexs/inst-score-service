@@ -1,4 +1,4 @@
-package com.chernyllexs.score.util.exception;
+package com.chernyllexs.score.api.exception;
 
 public class PostNotFoundException extends RuntimeException{
     public PostNotFoundException(String message) {
